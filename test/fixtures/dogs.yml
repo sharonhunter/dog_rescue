@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: MyString
+  gender: MyString
+  breed: MyString
+  secondary_breed: MyString
+  heartworm_status: MyString
+  temperament: MyString
+  activity_level: MyString
+  info: MyText
+  available: 2015-05-23
+  contact_name: MyString
+  contact_phone: MyString
+
+two:
+  name: MyString
+  age: MyString
+  gender: MyString
+  breed: MyString
+  secondary_breed: MyString
+  heartworm_status: MyString
+  temperament: MyString
+  activity_level: MyString
+  info: MyText
+  available: 2015-05-23
+  contact_name: MyString
+  contact_phone: MyString
