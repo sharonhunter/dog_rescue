@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
+  before_action :authorize, only: [:new, :edit, :update, :destroy]
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
+
 
   # GET /dogs
   # GET /dogs.json

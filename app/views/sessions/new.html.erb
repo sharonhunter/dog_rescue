@@ -1,0 +1,14 @@
+<h1>Admin Login</h1>
+
+<!--consider moving this flash msg div to application.html.erb-->
+<% if flash[:error] %>
+    <div class="notice"><%= flash[:error] %></div>
+  <% end %>
+
+<%= form_tag '/login' do |f| %>
+
+	Email: <%= text_field_tag :email %>
+	Password: <%= password_field_tag :password %>
+	<%= submit_tag "Submit" %>
+
+<% end %>
