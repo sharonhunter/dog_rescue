@@ -62,5 +62,7 @@
   <%= @dog.contact_phone %>
 </p>
 
+<% if current_user %>
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<% end %> 
+<%= link_to 'View All Dogs', dogs_path %>

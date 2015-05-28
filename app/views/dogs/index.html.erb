@@ -38,9 +38,11 @@
         <td><%= dog.available %></td>
         <td><%= dog.contact_name %></td>
         <td><%= dog.contact_phone %></td>
-        <td><%= link_to 'Show', dog %></td>
+        <td><%= link_to 'View This Dog', dog %></td>
+        <% if current_user %>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
         <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +50,6 @@
 
 <br>
 
-<%= link_to 'New Dog', new_dog_path %>
+<% if current_user %>
+<%= link_to 'Create New Dog Entry', new_dog_path %>
+<% end %>

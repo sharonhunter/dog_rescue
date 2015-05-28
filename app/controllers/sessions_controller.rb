@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+	#https://gist.github.com/thebucknerlife/10090014
+
 	def new
 	end
 
