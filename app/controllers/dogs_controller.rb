@@ -7,6 +7,11 @@ class DogsController < ApplicationController
   # GET /dogs.json
   def index
     @dogs = Dog.all
+    @dogs = Dog.where(nil) # creates an anonymous scope
+    @dogs = @dogs.by_name(params[:name]) if params[:name].present?
+    @dogs = @dogs.by_breed(params[:breed]) if params[:breed].present?
+    # gender search not yet working
+    # @dogs = @dogs.by_gender(params[:gender]) if params[:gender].present?
   end
 
   # GET /dogs/1
@@ -30,7 +35,7 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        format.html { redirect_to @dog, notice: 'New dog was successfully created.' }
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
@@ -44,7 +49,7 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
-        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        format.html { redirect_to @dog, notice: 'This dog was successfully updated.' }
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
@@ -58,7 +63,7 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     respond_to do |format|
-      format.html { redirect_to dogs_url, notice: 'Dog was successfully destroyed.' }
+      format.html { redirect_to dogs_url, notice: 'This entry was successfully deleted.' }
       format.json { head :no_content }
     end
   end

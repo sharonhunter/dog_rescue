@@ -25,7 +25,7 @@
       <tr>
         <!-- <td><%= image_tag dog.image.url, width:150, height:125 %></td> -->
         <!-- <td><%= image_tag dog.image.url %> -->
-        <td><%= image_tag dog.image.url (:thumb)%>
+        <td><%= link_to image_tag dog.image.url (:thumb)%></td>
         <td><%= dog.name %></td>
         <td><%= dog.age %></td>
         <td><%= dog.gender %></td>
