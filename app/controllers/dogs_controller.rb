@@ -5,13 +5,22 @@ class DogsController < ApplicationController
 
   # GET /dogs
   # GET /dogs.json
-  def index
-    @dogs = Dog.all
-    @dogs = Dog.where(nil) # creates an anonymous scope
-    @dogs = @dogs.by_name(params[:name]) if params[:name].present?
-    @dogs = @dogs.by_breed(params[:breed]) if params[:breed].present?
+  #def index
+    #@dogs = Dog.all
+    #@dogs = Dog.where(nil) # creates an anonymous scope
+    #@dogs = @dogs.by_name(params[:name]) if params[:name].present?
+    #@dogs = @dogs.by_breed(params[:breed]) if params[:breed].present?
     # gender search not yet working
     # @dogs = @dogs.by_gender(params[:gender]) if params[:gender].present?
+  #end
+
+  def index
+      #@dogs = Dog.all
+      if params[:search]
+        @dogs = Dog.search(params[:search]).order("created_at DESC")
+      else
+       @dogs = Dog.all.order("created_at DESC")
+      end
   end
 
   # GET /dogs/1
