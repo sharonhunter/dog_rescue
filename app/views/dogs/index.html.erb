@@ -1,9 +1,11 @@
 <h1>Listing dogs</h1>
 
 <%= form_tag(dogs_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Dogs" %>
-<%= submit_tag "Search Available Dogs" %>
+<%= text_field_tag :search, params[:search], placeholder: "Search for..." %>
+<%= submit_tag "Find Dogs" %>
 <% end %>
+
+<% if @dogs.present? %>
 
 <table>
   <thead>
@@ -52,6 +54,11 @@
     <% end %>
   </tbody>
 </table>
+
+<% else %>
+  <p> Sorry, no dogs matched the term "<%= params[:search] %>".</p>
+  <%= link_to 'View All Dogs', dogs_path %>
+<% end %>
 
 <br>
 
