@@ -7,7 +7,39 @@
 
 <% if @dogs.present? %>
 
-<table>
+<% @dogs.each do |dog| %>
+
+<div class="row">
+        <div class="col s4 m4 l4">
+          <div class="card small">
+            <div class="card-image">
+              <p><%= link_to image_tag dog.image.url (:medium)%></p>
+            </div>
+      
+              <p class="card-title"><%= dog.name %></p>
+            
+            <div class="card-action">
+              <div class="age"><p><%= dog.age %></p></div>
+                <% if dog.gender == "male" || dog.gender == "Male" %>
+                      <div class="gender">
+                        <p>M</p>
+                       </div>
+                  <% elsif dog.gender == "female" || dog.gender == "Female" %>
+                    <div class="gender">
+                     <p>F</p>
+                    </div>
+                  <% end %>
+                <div class="dog-link">
+                  <%= link_to dog.name + "'s Info", dog %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %> 
+
+
+  <table>
   <thead>
     <tr>
       <th>Photo</th>

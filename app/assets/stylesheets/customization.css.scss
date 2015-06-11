@@ -1,0 +1,46 @@
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+
+.card.small .card-image {
+	height:192px;
+}
+
+.card .card-image { top:-16px; }
+
+.card .card-title {
+	color:#555; 
+	text-align:center; 
+	text-transform:uppercase; 
+	margin:0px;
+	padding-bottom:10px;
+	border-bottom:1px solid #dedede;
+}
+
+.card.small .card-action {
+	border:none;
+	margin:-12px;
+	padding:12px 0px;
+	text-align:right;
+	position:static;
+}
+
+.age, .gender, .dog-link { 
+	display:inline-block;
+	
+ }
+
+.age > p {
+	
+    border:1px solid purple;
+    font-size:18px;
+}
+
+.gender > p {
+	
+	border: 1px solid red;
+	font-size:18px;
+}
+
+
+
