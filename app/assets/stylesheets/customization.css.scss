@@ -2,6 +2,10 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
 
+$pink:#FFDAE0;
+$lightblue:#D1EEEE;
+$lightgray:#dedede;
+
 .card.small .card-image {
 	height:192px;
 }
@@ -27,20 +31,27 @@ $primary-color: color("blue", "lighten-2") !default;
 
 .age, .gender, .dog-link { 
 	display:inline-block;
-	
- }
-
-.age > p {
-	
-    border:1px solid purple;
-    font-size:18px;
+	text-align:center;
 }
 
-.gender > p {
-	
-	border: 1px solid red;
-	font-size:18px;
+.male { background-color:$lightblue;}
+
+.female { background-color:$pink; }
+
+.age, .gender { 
+   width:18%;
 }
+
+.gender {
+	margin-left:-5px;
+}
+
+.age { background-color:$lightgray; }
+
+.dog-link { width:60%; }
+
+.age > p, .gender > p { font-size:18px; }
+
 
 
 

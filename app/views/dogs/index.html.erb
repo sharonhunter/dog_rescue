@@ -21,11 +21,11 @@
             <div class="card-action">
               <div class="age"><p><%= dog.age %></p></div>
                 <% if dog.gender == "male" || dog.gender == "Male" %>
-                      <div class="gender">
+                      <div class="gender male">
                         <p>M</p>
                        </div>
                   <% elsif dog.gender == "female" || dog.gender == "Female" %>
-                    <div class="gender">
+                    <div class="gender female">
                      <p>F</p>
                     </div>
                   <% end %>
