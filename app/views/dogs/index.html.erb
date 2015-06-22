@@ -7,10 +7,11 @@
 
 <% if @dogs.present? %>
 
-<% @dogs.each do |dog| %>
+
 
 <div class="row">
-        <div class="col s4 m4 l4">
+<% @dogs.each do |dog| %>
+        <div class="col s6 m4">
           <div class="card small">
             <div class="card-image">
               <p><%= link_to image_tag dog.image.url (:medium)%></p>
@@ -35,8 +36,9 @@
             </div>
           </div>
         </div>
-      </div>
+      
   <% end %> 
+  </div>
 
 
   <table>
