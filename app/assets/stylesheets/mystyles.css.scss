@@ -1,0 +1,107 @@
+* {
+	box-sizing:border-box;
+}
+
+html {
+	width:100%;
+	height:100%;
+}
+
+p, div {
+	padding:0px;
+	margin:0px;
+}
+
+.container {
+	width:90%;
+	border:1px solid red;
+	margin:0px auto 2% auto;
+}
+
+footer {
+	width:80%;
+	margin:0px auto;
+	border:1px solid black;
+}
+
+@media (min-width: 300px) and (max-width: 717px) {
+  div.hide-xs { display:none;}
+}
+
+@media (min-width: 718px) and (max-width: 1600px) {
+   table.show-xs { display:none; }
+   
+   .center {
+   		width:90%;
+   		border:2px solid purple;
+   		margin:0px auto;
+    }
+
+	/*micro-clearfix*/
+   .center:after {
+  		content:"";
+  		display:table;
+  		clear:both;
+	}
+}
+	.card {
+		display:inline-block;
+		height:300px;
+		width:300px;
+		border:2px solid green;
+		postion:relative;
+		border-radius:3px;
+		margin:2% 2% 2% 0%;
+		float:left;
+
+		.card-image {
+			height:65%;
+			overflow:hidden;
+		}
+	}
+
+	.card-title {
+		border:2px solid black;
+		text-align:center;
+	}
+
+	.card-title > p {
+		font-size:2em;
+		color:#666;
+		text-transform:uppercase;
+	    margin:0px auto;
+	    text-align:center;
+	    padding:4px 0px;
+	}
+
+	.card-action {
+		border:2px solid gray;
+		height:20%;
+	}
+
+	.age, .gender, .dog-link {
+		display:inline-block;
+		width:18%;
+		padding:16px 0px;
+		border:1px solid red;
+		text-align:center;
+	}
+
+	.dog-link {
+		width:61%;
+		border:1px solid purple;
+	}
+ 
+ @media (min-width: 1601px) {
+   table.show-xs { display:none; }
+ }
+
+
+
+
+
+
+
+
+
+

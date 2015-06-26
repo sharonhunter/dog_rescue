@@ -6,13 +6,15 @@ $pink:#FFDAE0;
 $lightblue:#D1EEEE;
 $lightgray:#dedede;
 
+
 .card.small .card-image {
-	height:192px;
+	height:176px;
 }
 
-.card .card-image { top:-16px; }
+.card .card-image { top:-16px;}
 
 .card .card-title {
+	
 	color:#555; 
 	text-align:center; 
 	text-transform:uppercase; 
@@ -53,5 +55,6 @@ $lightgray:#dedede;
 .age > p, .gender > p { font-size:18px; }
 
 
+  
 
 

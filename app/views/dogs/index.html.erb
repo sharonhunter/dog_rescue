@@ -1,85 +1,28 @@
+
+
+<header>
 <h1>Listing dogs</h1>
 
 <%= form_tag(dogs_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search for..." %>
 <%= submit_tag "Find Dogs" %>
 <% end %>
+</header>
 
 <% if @dogs.present? %>
 
-
-
-<div class="row">
-<% @dogs.each do |dog| %>
-        <div class="col s6 m4">
-          <div class="card small">
-            <div class="card-image">
-              <p><%= link_to image_tag dog.image.url (:medium)%></p>
-            </div>
-      
-              <p class="card-title"><%= dog.name %></p>
-            
-            <div class="card-action">
-              <div class="age"><p><%= dog.age %></p></div>
-                <% if dog.gender == "male" || dog.gender == "Male" %>
-                      <div class="gender male">
-                        <p>M</p>
-                       </div>
-                  <% elsif dog.gender == "female" || dog.gender == "Female" %>
-                    <div class="gender female">
-                     <p>F</p>
-                    </div>
-                  <% end %>
-                <div class="dog-link">
-                  <%= link_to dog.name + "'s Info", dog %>
-                </div>
-            </div>
-          </div>
-        </div>
-      
-  <% end %> 
-  </div>
-
-
-  <table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Breed</th>
-      <th>Secondary breed</th>
-      <th>Heartworm status</th>
-      <th>Temperament</th>
-      <th>Activity level</th>
-      <th>Info</th>
-      <th>Available</th>
-      <th>Contact name</th>
-      <th>Contact phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<table class="show-xs">
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
         <!-- <td><%= image_tag dog.image.url, width:150, height:125 %></td> -->
         <!-- <td><%= image_tag dog.image.url %> -->
         <td><%= link_to image_tag dog.image.url (:thumb)%></td>
-        <td><%= dog.name %></td>
+        <!-- <td><%= dog.name %></td> -->
+        <td><%= link_to 'Meet ' + dog.name , dog %></td>
         <td><%= dog.age %></td>
         <td><%= dog.gender %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.secondary_breed %></td>
-        <td><%= dog.heartworm_status %></td>
-        <td><%= dog.temperament %></td>
-        <td><%= dog.activity_level %></td>
-        <td><%= dog.info %></td>
-        <td><%= dog.available %></td>
-        <td><%= dog.contact_name %></td>
-        <td><%= dog.contact_phone %></td>
-        <td><%= link_to 'View This Dog', dog %></td>
+        
         <% if current_user %>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
         <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -88,6 +31,48 @@
     <% end %>
   </tbody>
 </table>
+
+</div>
+</div>
+
+
+<div class="hide-xs">
+  <div class="center">
+  <% @dogs.each do |dog| %>
+          <div class="card">
+            <div class="card-image">
+              <p><%= link_to image_tag dog.image.url (:medium)%></p>
+            </div>
+      
+            <div class="card-title">
+              <p><%= dog.name %></p>
+            </div>
+            
+            <div class="card-action">
+              <div class="age">
+                  <p><%= dog.age %></p>
+              </div>
+                <% if dog.gender == "male" || dog.gender == "Male" %>
+                      <div class="gender male">
+                        <p>M</p>
+                       </div>
+                <% elsif dog.gender == "female" || dog.gender == "Female" %>
+                    <div class="gender female">
+                     <p>F</p>
+                    </div>
+                <% end %>
+              <div class="dog-link">
+                  <p><%= link_to dog.name + "'s Info", dog %></p>
+              </div>
+            </div><!--/card-action-->
+          </div>
+      <% end %> 
+  </div><!--/card-->
+  </div><!--/center-->
+</div><!--/hide-xs-->
+
+
+  
 
 <% else %>
   <p> Sorry, no dogs matched the term "<%= params[:search] %>".</p>

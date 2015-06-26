@@ -1,1 +1,9 @@
 <h1>This is the homepage...for now.</h1>
+
+<footer>
+			<% if current_user %>
+		  		Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+			<% else %>
+		  		<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+			<% end %>
+		</footer>
