@@ -1,76 +1,87 @@
 <p id="notice"><%= notice %></p>
 
 <div class="flex">
+  <div class="img-show">
+    <%=image_tag @dog.image.url(:large), class:'img-contain' %>
+  </div>
+    <!-- <div class="intro">
+      <h1 class="centered">Hi, I'm <%= @dog.name %> </h1>
+    </div> -->
 
-<div class="img-show">
+    <div class="name-under-photo">
+      <h1 class="hello">Hi, I'm <%= @dog.name %> </h1>
+    </div>
+  
 
-<%=image_tag @dog.image.url(:large), class:'img-contain' %>
+  <div class="info">
+  <table class="show">
+    <tbody>
+    <!-- <tr class="stats">
+      <td><strong>Name:</strong></td>
+      <td> <%= @dog.name %> </td>
+    </tr> -->
+    <tr class="stats">
+      <td><strong>Age:</strong></td>
+      <td><%= @dog.age %></td>
+    </tr>
+    <tr class="stats">
+      <td><strong>Gender:</strong></td>
+      <td><%= @dog.gender %></td>
+    </tr>
+    <tr class="stats">
+      <td><strong>Main Breed:</strong></td>
+      <td><%= @dog.breed %></td>
+    </tr> 
+    <tr class="stats">
+      <td><strong>Secondary Breed:</strong></td>
+      <td><%= @dog.secondary_breed %></td>
+    </tr> 
+    <tr class="stats">
+      <td><strong>Heartworm Status:</strong></td>
+      <td><%= @dog.heartworm_status %></td>
+    </tr>
+    <tr class="stats">
+      <td><strong>Temperament:</strong></td>
+      <td><%= @dog.temperament %></td>
+    </tr> 
+    <tr class="stats">
+      <td><strong>Activity Level:</strong></td> 
+      <td><%= @dog.activity_level %></td>
+    </tr>
+    <tr class="stats">
+      <td><strong>Available On:</strong></td>
+      <td><%= @dog.available.strftime("%B %d, %Y") %></td>
+    </tr>
+    <tr class="stats highlight-blue">
+      <td colspan="2"><%= @dog.info %></td>
+    </tr>
 
-</div>
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+    <tr class="stats highlight-yellow">
+      <td><strong>Contact:</strong></td>
+      <td><%= @dog.contact_name %></td>
+    </tr>
+    <tr class="stats highlight-yellow">
+      <td><strong>Phone:</strong></td>
+      <td><%= @dog.contact_phone %></td>
+    </tr>
+    <tr class="stats highlight-turq">
+      <td colspan="2"><%= link_to 'Back to Available Dogs', dogs_path, class: 'back-to' %></td>
+    </tr>
+    </tbody>
+  </table>
 
-<p>
-  <strong>Age:</strong>
-  <%= @dog.age %>
-</p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @dog.gender %>
-</p>
+    
+  
+    </div><!--/info-->
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
+    
+  </div><!--/flex-->
 
-<p>
-  <strong>Secondary breed:</strong>
-  <%= @dog.secondary_breed %>
-</p>
+  <% if current_user %>
+      <%= link_to 'Edit', edit_dog_path(@dog) %> |
+  <% end %> 
 
-<p>
-  <strong>Heartworm status:</strong>
-  <%= @dog.heartworm_status %>
-</p>
-
-<p>
-  <strong>Temperament:</strong>
-  <%= @dog.temperament %>
-</p>
-
-<p>
-  <strong>Activity level:</strong>
-  <%= @dog.activity_level %>
-</p>
-
-<p>
-  <strong>Info:</strong>
-  <%= @dog.info %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @dog.available.strftime("%B %d, %Y") %>
-</p>
-
-<p>
-  <strong>Contact name:</strong>
-  <%= @dog.contact_name %>
-</p>
-
-<p>
-  <strong>Contact phone:</strong>
-  <%= @dog.contact_phone %>
-</p>
-
-<% if current_user %>
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<% end %> 
-
-<%= link_to 'View All Dogs', dogs_path %>
-</div>
+  
+  </div>
 </div>
