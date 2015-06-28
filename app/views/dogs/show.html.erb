@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%=image_tag @dog.image.url(:medium) %>
+<div class="flex">
 
+<div class="img-show">
+
+<%=image_tag @dog.image.url(:large), class:'img-contain' %>
+
+</div>
 <p>
   <strong>Name:</strong>
   <%= @dog.name %>
@@ -65,4 +70,7 @@
 <% if current_user %>
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <% end %> 
+
 <%= link_to 'View All Dogs', dogs_path %>
+</div>
+</div>

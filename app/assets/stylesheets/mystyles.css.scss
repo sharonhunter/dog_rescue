@@ -32,6 +32,8 @@ footer {
 	border:1px solid black;
 }
 
+/* INDEX */
+
 .center {
 	width:90%;
 	margin:0px auto;
@@ -186,6 +188,28 @@ a {
 @media (min-width: 1601px) {
    table.show-xs { display:none; }
  }
+
+/* SHOW PAGE */
+
+.flex { 
+	width:100%;
+	clear:left;
+	border:2px solid black;
+}
+.img-show {
+	margin:0px auto;
+	border:2px solid green;
+	overflow:hidden;
+}
+
+.img-contain {
+	display:block;
+	border:2px solid red;
+	/* makes img stretchable */
+	max-width: 100%;
+  	height: auto;
+
+}
 
 
 
