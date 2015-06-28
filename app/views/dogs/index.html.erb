@@ -1,12 +1,11 @@
 
 
 <header>
-<h1>Listing dogs</h1>
-
-<%= form_tag(dogs_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search for..." %>
-<%= submit_tag "Find Dogs" %>
-<% end %>
+  <h1>Available Dogs</h1>
+    <%= form_tag(dogs_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search for..." %>
+    <%= submit_tag "Find Dogs" %>
+    <% end %>
 </header>
 
 <% if @dogs.present? %>
@@ -15,13 +14,11 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
-        <!-- <td><%= image_tag dog.image.url, width:150, height:125 %></td> -->
-        <!-- <td><%= image_tag dog.image.url %> -->
-        <td><%= link_to image_tag dog.image.url (:thumb)%></td>
-        <!-- <td><%= dog.name %></td> -->
-        <td><%= link_to 'Meet ' + dog.name , dog %></td>
-        <td><%= dog.age %></td>
-        <td><%= dog.gender %></td>
+        <!-- <td class="tbl-img"><%= link_to image_tag dog.image.url (:thumb)%></td>  -->
+        <td class="twenty-five left"><%= image_tag dog.image.url, width:110, height:80 %></td>
+        <td class="thirty-five"><%= link_to 'About ' + dog.name , dog %></td>
+        <td class="fifteen"><%= dog.age %></td>
+        <td class="twenty-five"><%= dog.gender %></td>
         
         <% if current_user %>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>

@@ -9,7 +9,8 @@ class Dog < ActiveRecord::Base
   def self.search(search)
   	#Rails 4.2 will only return the LAST where results if listed on separate lines
     #Postgres's ILIKE below replaced LIKE to create case-insensitive search
-    where("name ILIKE ? OR breed ILIKE ? OR gender ILIKE?", "%#{search}%", "%#{search}%", "%#{search}%") # will work
+    # "%" + search + "%" to prevent SQL injection
+    where("name ILIKE ? OR breed ILIKE ? OR gender ILIKE ?", "%" + search + "%", "%" + search + "%", "%" + search + "%")# will work
   end
 
 end

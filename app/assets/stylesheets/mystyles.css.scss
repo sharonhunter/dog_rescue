@@ -1,10 +1,19 @@
-* {
-	box-sizing:border-box;
-}
+$pink:#FFDAE0;
+$lightblue:#D1EEEE;
+$lightgray:#dedede;
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+* { box-sizing:border-box; }
 
 html {
 	width:100%;
 	height:100%;
+}
+
+body { 
+    font-family:Lato, sans-serif;  
+    color:#666; 
 }
 
 p, div {
@@ -14,7 +23,6 @@ p, div {
 
 .container {
 	width:90%;
-	border:1px solid red;
 	margin:0px auto 2% auto;
 }
 
@@ -24,77 +32,165 @@ footer {
 	border:1px solid black;
 }
 
+.center {
+	width:90%;
+	margin:0px auto;
+}
+
+/*micro-clearfix*/
+.center:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.card {
+	display:inline-block;
+	height:300px;
+	width:300px;
+	postion:relative;
+	border-radius:3px;
+	margin:2% 2% 2% 0%;
+	float:left;
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  	-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+
+	.card-image {
+		height:65%;
+		overflow:hidden;
+		border-radius:3px 3px 0px 0px;
+		border-bottom:1px solid #999;
+	}
+}
+
+.card-title { text-align:center; }
+
+.card-title > p {
+	font-size:2em;
+	color:#666;
+	text-transform:uppercase;
+    margin:0px auto;
+    text-align:center;
+    padding:8px 0px;
+}
+
+.card-action { 
+	height:20%; 
+	border-top:1px solid #999;  
+}
+
+.age, .gender, .dog-link {
+	display:inline-block;
+	width:18%;
+	padding:15px 0px;
+	text-align:center;
+	margin:0px;
+	float:left;
+}
+
+.age { background-color:lightyellow; border-right:1px solid $lightgray;}
+
+.gender { background-color:$lightblue; }
+
+/*.male { background-color:$lightblue; border-right:1px solid $lightgray;}*/
+
+/*.female { background-color:#DAC9FF; border-right:1px solid $lightgray;}*/
+
+.dog-link {
+	width:64%;
+	background-color:#96CDCD;
+}
+
+table {
+	margin-top:5%;
+	border-radius:3px;
+	width:100%;
+	border-collapse:collapse;
+}
+ 
+tr, td {
+	border-top: 2px solid $lightgray;
+	border-bottom: 2px solid $lightgray;
+	border-collapse:collapse;
+	padding:0px;
+	margin:0px;
+}
+
+input[type = "text"] {
+	height:36px;
+	width:50%;
+	min-width:238px;
+	max-width:400px;
+	background-color:#f8f8f8;
+	border:none;
+	border-bottom:2px solid #96CDCD;
+	font-size:16px;
+}
+
+::-webkit-input-placeholder { padding-left:10px; }
+
+:-moz-placeholder { /* Firefox 18- */ padding-left:10px; }
+
+::-moz-placeholder { /* Firefox 19+ */ padding-left:10px; }
+
+:-ms-input-placeholder { padding-left:10px; }
+
+input[type="submit"] {
+	background-color:#96CDCD;
+	height:36px;
+	width:18%;
+	min-width:100px;
+	max-width:150px;
+	border-radius:3px;
+	border:none;
+	vertical-align:top;
+	margin-left:1%;
+	font-size:16px;
+	color:#666;
+}
+
+tr { height:80px;}
+
+td { text-align:center; }
+
+.left { text-align:left; }
+
+.fifteen { width: 15%; }
+
+.twenty-five { width:25%; }
+
+.thirty-five { width:35%; }
+
+.forty { width:40%; }
+
+a { 
+	text-decoration:none;
+	color:#666;
+ }
+
 @media (min-width: 300px) and (max-width: 717px) {
   div.hide-xs { display:none;}
+  ::-webkit-input-placeholder { font-size:14px; }
+  :-moz-placeholder { /* Firefox 18- */ font-size:14px; }
+  ::-moz-placeholder { /* Firefox 19+ */ font-size:14px; }
+  :-ms-input-placeholder { font-size:14px; }
+  input[type="submit"] { font-size:14px; }
+
 }
 
 @media (min-width: 718px) and (max-width: 1600px) {
    table.show-xs { display:none; }
-   
-   .center {
-   		width:90%;
-   		border:2px solid purple;
-   		margin:0px auto;
-    }
-
-	/*micro-clearfix*/
-   .center:after {
-  		content:"";
-  		display:table;
-  		clear:both;
-	}
 }
-	.card {
-		display:inline-block;
-		height:300px;
-		width:300px;
-		border:2px solid green;
-		postion:relative;
-		border-radius:3px;
-		margin:2% 2% 2% 0%;
-		float:left;
 
-		.card-image {
-			height:65%;
-			overflow:hidden;
-		}
-	}
-
-	.card-title {
-		border:2px solid black;
-		text-align:center;
-	}
-
-	.card-title > p {
-		font-size:2em;
-		color:#666;
-		text-transform:uppercase;
-	    margin:0px auto;
-	    text-align:center;
-	    padding:4px 0px;
-	}
-
-	.card-action {
-		border:2px solid gray;
-		height:20%;
-	}
-
-	.age, .gender, .dog-link {
-		display:inline-block;
-		width:18%;
-		padding:16px 0px;
-		border:1px solid red;
-		text-align:center;
-	}
-
-	.dog-link {
-		width:61%;
-		border:1px solid purple;
-	}
- 
- @media (min-width: 1601px) {
+@media (min-width: 1601px) {
    table.show-xs { display:none; }
  }
+
+
+
+
+
 
 
 
