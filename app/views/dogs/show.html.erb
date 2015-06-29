@@ -4,84 +4,81 @@
   <div class="img-show">
     <%=image_tag @dog.image.url(:large), class:'img-contain' %>
   </div>
-    <!-- <div class="intro">
-      <h1 class="centered">Hi, I'm <%= @dog.name %> </h1>
-    </div> -->
 
-    <div class="name-under-photo">
       <h1 class="hello">Hi, I'm <%= @dog.name %> </h1>
-    </div>
+      <div class="beside-photo">
+        <p class="paragraph"> <%= @dog.info %> </p>
+      </div>
   
-
   <div class="info">
-  <table class="show">
-    <tbody>
-    <!-- <tr class="stats">
-      <td><strong>Name:</strong></td>
-      <td> <%= @dog.name %> </td>
-    </tr> -->
-    <tr class="stats">
-      <td><strong>Age:</strong></td>
-      <td><%= @dog.age %></td>
-    </tr>
-    <tr class="stats">
-      <td><strong>Gender:</strong></td>
-      <td><%= @dog.gender %></td>
-    </tr>
-    <tr class="stats">
-      <td><strong>Main Breed:</strong></td>
-      <td><%= @dog.breed %></td>
-    </tr> 
-    <tr class="stats">
-      <td><strong>Secondary Breed:</strong></td>
-      <td><%= @dog.secondary_breed %></td>
-    </tr> 
-    <tr class="stats">
-      <td><strong>Heartworm Status:</strong></td>
-      <td><%= @dog.heartworm_status %></td>
-    </tr>
-    <tr class="stats">
-      <td><strong>Temperament:</strong></td>
-      <td><%= @dog.temperament %></td>
-    </tr> 
-    <tr class="stats">
-      <td><strong>Activity Level:</strong></td> 
-      <td><%= @dog.activity_level %></td>
-    </tr>
-    <tr class="stats">
-      <td><strong>Available On:</strong></td>
-      <td><%= @dog.available.strftime("%B %d, %Y") %></td>
-    </tr>
-    <tr class="stats highlight-blue">
-      <td colspan="2"><%= @dog.info %></td>
-    </tr>
+      <table class="show">
+        <tbody>
+        <!-- <tr class="stats">
+          <td>Name:</td>
+          <td> <%= @dog.name %> </td>
+        </tr> -->
+        <tr class="stats">
+          <td>Age:</td>
+          <td><%= @dog.age %></td>
+          
+        </tr>
+        <tr class="stats">
+          <td>Gender:</td>
+          <td><%= @dog.gender %></td>
+          
+        </tr>
+        <tr class="stats">
+          <td>Main Breed:</td>
+          <td><%= @dog.breed %></td>
+        </tr> 
+        <tr class="stats">
+          <td>Secondary Breed:</td>
+          <td><%= @dog.secondary_breed %></td>
+        </tr> 
+        <tr class="stats">
+          <td>Heartworm Status:</td>
+          <td><%= @dog.heartworm_status %></td>
+        </tr>
+        <tr class="stats">
+          <td>Temperament:</td>
+          <td><%= @dog.temperament %></td>
+        </tr> 
+        <tr class="stats">
+          <td>Activity Level:</td> 
+          <td><%= @dog.activity_level %></td>
+        </tr>
+        <tr class="stats">
+          <td>Available On:</td>
+          <td><%= @dog.available.strftime("%B %d, %Y") %></td>
+        </tr>
+        <tr class="stats highlight-blue blurb">
+          <td colspan="2"><%= @dog.info %></td>
+        </tr>
 
-    <tr class="stats highlight-yellow">
-      <td><strong>Contact:</strong></td>
-      <td><%= @dog.contact_name %></td>
-    </tr>
-    <tr class="stats highlight-yellow">
-      <td><strong>Phone:</strong></td>
-      <td><%= @dog.contact_phone %></td>
-    </tr>
-    <tr class="stats highlight-turq">
-      <td colspan="2"><%= link_to 'Back to Available Dogs', dogs_path, class: 'back-to' %></td>
-    </tr>
-    </tbody>
-  </table>
-
-
-    
-  
+        <tr class="stats highlight-yellow">
+          <td>Contact:</td>
+          <td><%= @dog.contact_name %></td>
+        </tr>
+        <tr class="stats highlight-yellow">
+          <td>Phone:</td>
+          <td><%= @dog.contact_phone %></td>
+        </tr>
+        <tr class="stats highlight-turq">
+          <td colspan="2"><%= link_to 'Back to Available Dogs', dogs_path, class: 'back-to' %></td>
+        </tr>
+        </tbody>
+      </table>
     </div><!--/info-->
 
-    
+    <div class="extra-pix">
+      <img src="http://placehold.it/350x200">
+      <img src="http://placehold.it/350x200">
+    </div>
   </div><!--/flex-->
 
-  <% if current_user %>
-      <%= link_to 'Edit', edit_dog_path(@dog) %> |
-  <% end %> 
+      <% if current_user %>
+          <%= link_to 'Edit', edit_dog_path(@dog) %> |
+      <% end %> 
 
-  
   </div>
 </div>
